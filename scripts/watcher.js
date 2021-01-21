@@ -182,9 +182,9 @@ async function onNewBlock(blockNumber) {
 
   const reportMaliciousEvents = await validatorSetContract.getPastEvents('ReportMaliciousCalled', { fromBlock: blockNumber, toBlock: blockNumber });
   for (let i = 0; i < reportMaliciousEvents.length; i++) {
-    console.log(`reportMalicious called by ${reportEvents[i].returnValues.reportingValidator}:`);
-    console.log(`  maliciousValidator = ${reportEvents[i].returnValues.maliciousValidator}`);
-    console.log(`  blockNumber = ${reportEvents[i].returnValues.blockNumber}`);
+    console.log(`reportMalicious called by ${reportMaliciousEvents[i].returnValues.reportingValidator}:`);
+    console.log(`  maliciousValidator = ${reportMaliciousEvents[i].returnValues.maliciousValidator}`);
+    console.log(`  blockNumber = ${reportMaliciousEvents[i].returnValues.blockNumber}`);
     console.log('');
   }
 
