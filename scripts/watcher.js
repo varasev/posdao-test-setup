@@ -180,6 +180,14 @@ async function onNewBlock(blockNumber) {
     console.log('');
   }
 
+  const reportMaliciousEvents = await validatorSetContract.getPastEvents('ReportMaliciousCalled', { fromBlock: blockHeader.number, toBlock: blockHeader.number });
+  for (let i = 0; i < reportMaliciousEvents.length; i++) {
+    console.log(`reportMalicious called by ${reportEvents[i].returnValues.reportingValidator}:`);
+    console.log(`  maliciousValidator = ${reportEvents[i].returnValues.maliciousValidator}`);
+    console.log(`  blockNumber = ${reportEvents[i].returnValues.blockNumber}`);
+    console.log('');
+  }
+
   console.log('');
   console.log('=======================================================');
   console.log('');

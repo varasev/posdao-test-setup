@@ -8,6 +8,10 @@ async function main() {
   assert(typeof specFile === 'string');
   specFile = JSON.parse(specFile);
   assert(specFile.engine.authorityRound.params.stepDuration != null);
+
+  specFile.engine.authorityRound.params.faultyBlocksTransition = {
+    "0x75df42383afe6bf5194aa8fa0e9b3d5f9e869441": "10"
+  };
   
   // Set step duration map for testing purposes
   specFile.engine.authorityRound.params.stepDuration = {
