@@ -12,6 +12,9 @@ async function main() {
   specFile.engine.authorityRound.params.faultyBlocksTransition = {
     "0x75df42383afe6bf5194aa8fa0e9b3d5f9e869441": "10"
   };
+  //specFile.engine.authorityRound.params.reportMalicious = {
+  //  "10": "0x75df42383afe6bf5194aa8fa0e9b3d5f9e869441"
+  //};
   
   // Set step duration map for testing purposes
   specFile.engine.authorityRound.params.stepDuration = {
